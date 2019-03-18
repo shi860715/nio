@@ -12,8 +12,8 @@ public class HelloHandler extends SimpleChannelHandler {
         System.out.println("messageReceived");
         System.out.println(e.getMessage());
 
-        ChannelBuffer channelBuffer = ChannelBuffers.copiedBuffer("hi".getBytes());
-           ctx.getChannel().write(channelBuffer);
+//        ChannelBuffer channelBuffer = ChannelBuffers.copiedBuffer("hi".getBytes());
+           ctx.getChannel().write("hi");
 
     }
 
