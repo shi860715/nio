@@ -32,6 +32,7 @@ public class NetServer {
    bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
        public ChannelPipeline getPipeline() throws Exception {
            ChannelPipeline channelPipeline = Channels.pipeline();
+//           用来处理消息类
            channelPipeline.addLast("decoder",new StringDecoder());
 
            channelPipeline.addLast("helloHandler",new HelloHandler());
