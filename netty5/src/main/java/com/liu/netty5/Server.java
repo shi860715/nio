@@ -2,10 +2,7 @@ package com.liu.netty5;
 
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
@@ -23,6 +20,18 @@ public class Server {
 
 
         try {
+//            netty3、x
+////  设置参数
+//            bootstrap.setOption("backlog",1024);
+//            bootstrap.setOption("tcpNoDelay",true);
+//            bootstrap.setOption("keepAlive",true);
+//            设置参数
+            bootstrap.option(ChannelOption.SO_BACKLOG,2048);//serverSocketchannel设置 链接缓冲池大小
+            bootstrap.option(ChannelOption.SO_KEEPALIVE,true);// socketchannel维持链接活跃，清除死链接
+            bootstrap.option(ChannelOption.TCP_NODELAY,true);//  socketchannel 关闭延迟发送的功能
+
+
+
 //            设置线程池
             bootstrap.group(boos,worker);
 

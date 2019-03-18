@@ -23,9 +23,13 @@ public class NetServer {
 //   两个线程池
         ExecutorService boss = Executors.newCachedThreadPool();
         ExecutorService worker = Executors.newCachedThreadPool();
+
+
+//  设置参数
+        bootstrap.setOption("backlog",1024);
+        bootstrap.setOption("tcpNoDelay",true);
+        bootstrap.setOption("keepAlive",true);
 //        设置niosocket工厂
-
-
     bootstrap.setFactory(new NioServerSocketChannelFactory(boss,worker));
 
 //    设置管道工厂
