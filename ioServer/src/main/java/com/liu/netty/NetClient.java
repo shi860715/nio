@@ -7,7 +7,7 @@ import org.jboss.netty.handler.codec.string.StringDecoder;
 import org.jboss.netty.handler.codec.string.StringEncoder;
 
 import java.net.InetSocketAddress;
-import java.net.SocketAddress;
+
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
